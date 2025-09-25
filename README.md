@@ -71,13 +71,13 @@ cd blood-donation-platform
 cd backend
 cp .env.example .env     # configure your environment variables
 npm install
-npm run dev
+npm start
 ```
 ### 1. Frontend
 ```bash
 cd ../frontend
 npm install
-npm start                # start React development server
+npm run dev               # start React development server
 ```   
 
 
