@@ -1,14 +1,41 @@
 {
-  "name": "blood_donation",
+  "name": "blood-donation-platform",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A comprehensive blood donation platform connecting donors with blood banks and hospitals",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:frontend": "vite",
+    "dev:backend": "cd Backend && npm run dev",
+    "dev:full": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
     "build": "vite build",
+    "build:frontend": "vite build",
+    "build:backend": "cd Backend && npm run build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:frontend": "eslint .",
+    "lint:backend": "cd Backend && npm run lint",
+    "test": "vitest",
+    "test:frontend": "vitest",
+    "test:backend": "cd Backend && npm test",
+    "preview": "vite preview",
+    "install:backend": "cd Backend && npm install",
+    "install:all": "npm install && npm run install:backend",
+    "start": "npm run dev:full",
+    "postinstall": "npm run install:backend"
   },
+  "keywords": [
+    "blood-donation",
+    "healthcare",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express",
+    "medical",
+    "donation-platform"
+  ],
+  "author": "Dilmini1027",
+  "license": "MIT",
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
@@ -18,10 +45,27 @@
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.3",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^8.2.2",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.4.0",
-    "vite": "^7.1.7"
-  }
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.3.5",
+    "vite": "^7.1.7",
+    "vitest": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dilmini1027/Blood-Donation-Platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dilmini1027/Blood-Donation-Platform/issues"
+  },
+  "homepage": "https://github.com/Dilmini1027/Blood-Donation-Platform#readme"
 }
