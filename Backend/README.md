@@ -79,5 +79,3 @@ cd ../frontend
 npm install
 npm run dev               # start React development server
 ```   
-
-
