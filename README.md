@@ -1,16 +1,83 @@
-# React + Vite
+# 🩸 Blood Donation Platform - Full Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive **full-stack web application** for managing blood donation activities. The platform connects **donors**, **blood banks**, and **hospitals** with a smooth and secure experience.  
 
-Currently, two official plugins are available:
+This project includes both:
+- **Frontend**: React + Tailwind CSS  
+- **Backend**: Node.js + Express + MySQL 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 👤 User Features
+- Register and log in as **Donor**, **Blood Bank**, or **Hospital**
+- Manage personal profile & donation history
+- View and book available donation appointments
+- Receive **email notifications** for verification, appointments, and confirmations
 
-## Expanding the ESLint configuration
+### 🏥 Blood Bank / Hospital Features
+- Manage donation requests
+- Approve/reject donor appointments
+- Track blood stock availability
+- Generate reports & statistics
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔐 Security
+- **JWT Authentication & Authorization**
+- **Role-based access control**
+- Password encryption with **bcrypt**
+- Email verification system
+- Rate limiting & security headers
+
+### 📊 Advanced Features
+- Appointment availability checking
+- Dashboard analytics
+- Automated reminders & notifications
+- Donation tracking system with medical details
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React (with Hooks & Context API)
+- Tailwind CSS (for UI design)
+- Axios (API calls)
+- React Router (routing)
+
+### Backend
+- Node.js + Express.js
+- MySQL
+- JWT Authentication
+- Nodemailer (email service)
+
+### Dev Tools
+- ESLint + Prettier
+- GitHub Actions (CI/CD pipeline)
+- Postman (API testing)
+
+---
+## ⚙️ Installation & Setup
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/your-username/blood-donation-platform.git
+cd blood-donation-platform
+```
+## ⚙️ Backend and Frontend setup
+
+### 1. Backend
+```bash
+cd backend
+cp .env.example .env     # configure your environment variables
+npm install
+npm start
+```
+### 1. Frontend
+```bash
+cd ../frontend
+npm install
+npm run dev               # start React development server
+```   
+
+
