@@ -128,12 +128,9 @@ function Home() {
                   </div>
                   <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl">
                     <span className="text-gray-700 font-medium">Active Donors</span>
-                    <span className="text-2xl font-bold text-blue-600">1,200+</span>
+                    <span className="text-2xl font-bold text-blue-600">200+</span>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl">
-                    <span className="text-gray-700 font-medium">Partner Hospitals</span>
-                    <span className="text-2xl font-bold text-green-600">25+</span>
-                  </div>
+            
                 </div>
               </div>
             </div>
@@ -384,44 +381,6 @@ function Home() {
                   <li className="flex items-center"><span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Hospital integration</li>
                   <li className="flex items-center"><span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Inventory management</li>
                   <li className="flex items-center"><span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Real-time availability</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Service 5 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-              <div className="relative bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Mobile App</h3>
-                <p className="text-gray-600 mb-6">User-friendly mobile application for donors and recipients with push notifications and offline access.</p>
-                <ul className="space-y-2 text-sm text-gray-500">
-                  <li className="flex items-center"><span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>iOS & Android apps</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>Push notifications</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>Offline functionality</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Service 6 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-              <div className="relative bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Analytics & Reports</h3>
-                <p className="text-gray-600 mb-6">Comprehensive analytics dashboard for tracking donation trends, donor insights, and platform performance.</p>
-                <ul className="space-y-2 text-sm text-gray-500">
-                  <li className="flex items-center"><span className="w-2 h-2 bg-teal-500 rounded-full mr-2"></span>Donation analytics</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-teal-500 rounded-full mr-2"></span>Performance metrics</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-teal-500 rounded-full mr-2"></span>Custom reports</li>
                 </ul>
               </div>
             </div>
