@@ -1,3 +1,5 @@
+import Login from "./Login";
+import Signup from "./Signup";
 function Home() {
   return (
     <div className="w-full bg-black text-white">
