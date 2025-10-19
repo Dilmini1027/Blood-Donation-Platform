@@ -1,6 +1,43 @@
-import Login from "./Login";
-import Signup from "./Signup";
+import { useState } from 'react';
+import LoginModal from "../components/LoginModal";
+import SignupModal from "../components/SignupModal";
+import OrganizerSignupModal from "../components/OrganizerSignupModal";
+
 function Home() {
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+  const [showOrganizerSignup, setShowOrganizerSignup] = useState(false);
+
+  const openLogin = () => {
+    setShowLogin(true);
+    setShowSignup(false);
+    setShowOrganizerSignup(false);
+  };
+
+  const openSignup = () => {
+    setShowSignup(true);
+    setShowLogin(false);
+    setShowOrganizerSignup(false);
+  };
+
+  const openOrganizerSignup = () => {
+    setShowOrganizerSignup(true);
+    setShowLogin(false);
+    setShowSignup(false);
+  };
+ 
+  const closeForms = () => {
+    setShowLogin(false);
+    setShowSignup(false);
+    setShowOrganizerSignup(false);
+  };
+
+  const switchToLoginFromOrganizer = () => {
+    setShowOrganizerSignup(false);
+    setShowLogin(true);
+    setShowSignup(false);
+  };
+
   return (
     <div className="w-full bg-black text-white">
       {/* Hero Section */}
@@ -15,14 +52,41 @@ function Home() {
           <div className="absolute inset-0 bg-black/70" />
         </div>
 
+        {/* Navigation Bar */}
+        <nav className="relative z-20 w-full py-6 px-8 lg:px-16">
+          <div className="flex justify-between items-center">
+            <div className="text-2xl font-bold text-white">
+              <span>Blood</span>Connect
+            </div>
+            <div className="hidden md:flex space-x-8">
+              <a href="#home" className="text-white hover:text-red-400 transition-colors duration-300 font-medium">Home</a>
+               <a href="#organize-events" className="text-white hover:text-red-400 transition-colors duration-300 font-medium">Organize Events</a>
+              <a href="#about" className="text-white hover:text-red-400 transition-colors duration-300 font-medium">About</a>
+             
+              <a href="#mission-vision" className="text-white hover:text-red-400 transition-colors duration-300 font-medium">Mission</a>
+              <a href="#services" className="text-white hover:text-red-400 transition-colors duration-300 font-medium">Services</a>
+              <a href="#testimonials" className="text-white hover:text-red-400 transition-colors duration-300 font-medium">Testimonials</a>
+              <a href="#contact" className="text-white hover:text-red-400 transition-colors duration-300 font-medium">Contact</a>
+            </div>
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button className="text-white hover:text-red-400 transition-colors duration-300">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </nav>
+
       
         {/* Content container */}
-        <div className="relative z-10 w-full h-full flex items-center min-h-screen pt-20">
+        <div className="relative z-10 w-full h-full flex items-center min-h-screen pt-0">
           <div className="w-full px-8 lg:px-16">
             <div className="max-w-none text-left">
-              <h1 className="text-6xl font-bold mb-8">
+              <h2 className="text-6xl font-bold mb-6">
                 Become a Donor
-              </h1>
+              </h2>
 
               <div className="mb-12">
                 <h2 className="text-2xl font-semibold mb-6">
@@ -36,10 +100,16 @@ function Home() {
               </div>
 
               <div className="flex gap-4 justify-start mb-16">
-                <button className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors">
+                <button 
+                  onClick={openSignup}
+                  className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors"
+                >
                   Register
                 </button>
-                <button className="bg-white text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                <button 
+                  onClick={openLogin}
+                  className="bg-white text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                >
                   Login
                 </button>
               </div>
@@ -64,6 +134,102 @@ function Home() {
         </div>
       </div>
 
+
+      {/* Organize Events Section */}
+      <section id="organize-events" className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/3 left-1/5 w-72 h-72 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/5 w-72 h-72 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent text-right mb-6">
+              Organize Blood Events
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-left leading-relaxed">
+              Make a difference in your community by organizing blood donation drives. 
+              Join our network of organizers and help save lives through coordinated efforts.
+            </p>
+          </div>
+x
+
+          {/* Benefits Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-6">Why Become an Organizer?</h3>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-800 mb-2">Community Impact</h4>
+                    <p className="text-gray-600">Create lasting change in your community and save lives through organized blood drives.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-800 mb-2">Professional Network</h4>
+                    <p className="text-gray-600">Connect with healthcare professionals, volunteers, and other community leaders.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-800 mb-2">Resources & Support</h4>
+                    <p className="text-gray-600">Access planning tools, promotional materials, and ongoing support from our team.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-white/20 shadow-2xl">
+                <h4 className="text-2xl font-bold text-gray-800 mb-6 text-center">Get Started as an Organizer</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl">
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                    <span className="text-gray-700">Register your organization</span>
+                  </div>
+                  <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl">
+                    <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                    <span className="text-gray-700">Plan your first event</span>
+                  </div>
+                  <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
+                    <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                    <span className="text-gray-700">Start making a difference</span>
+                  </div>
+                </div>
+                <button 
+                  onClick={openOrganizerSignup}
+                  className="w-full mt-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Become an Organizer
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </section>
+
+      
       {/* About Section */}
       <section id="about" className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-red-300 to-gray-50 relative overflow-hidden">
         {/* Background Pattern */}
@@ -575,8 +741,64 @@ function Home() {
         </div>
       </section>
 
+      {/* Login Modal */}
+      {showLogin && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative">
+            <button 
+              onClick={closeForms}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+            >
+              ×
+            </button>
+            <LoginModal />
+            <div className="mt-4 text-center">
+              <p className="text-gray-600">
+                Don't have an account?{" "}
+                <button 
+                  onClick={openSignup}
+                  className="text-red-600 hover:text-red-700 font-semibold"
+                >
+                  Sign up here
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
-      
+      {/* Signup Modal */}
+      {showSignup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative max-h-screen overflow-y-auto">
+            <button 
+              onClick={closeForms}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+            >
+              ×
+            </button>
+            <SignupModal />
+            <div className="mt-4 text-center">
+              <p className="text-gray-600">
+                Already have an account?{" "}
+                <button 
+                  onClick={openLogin}
+                  className="text-red-600 hover:text-red-700 font-semibold"
+                >
+                  Login here
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Organizer Signup Modal */}
+      <OrganizerSignupModal 
+        isOpen={showOrganizerSignup} 
+        onClose={closeForms} 
+        onSwitchToLogin={switchToLoginFromOrganizer}
+      />
 
       {/* Footer Section */}
       <footer id="contact" className="w-full h-24 bg-black flex items-center justify-center">
